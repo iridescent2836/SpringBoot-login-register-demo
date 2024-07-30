@@ -14,8 +14,8 @@ public class InterceptorConfig extends WebMvcConfigurationSupport {
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(jwtInterceptor())   //配置jwt的拦截器规则
-                .addPathPatterns("/**") //拦截请求路径格式
-                .excludePathPatterns("/login");    //豁免的路径
+                .addPathPatterns("/**")
+                .excludePathPatterns("/login","/register");    //豁免的路径，登录与注册路径不用验证token
 
         super.addInterceptors(registry);
     }

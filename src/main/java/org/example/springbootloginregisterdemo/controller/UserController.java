@@ -84,6 +84,7 @@ public class UserController {
         }
     }
 
+    //用于测试interceptor拦截效果
     @GetMapping("/info")
     public Response info() {
         List<User> userList = userMapper.selectList(null);
